@@ -1,8 +1,8 @@
 // Node modules
-import hundredsToWords from "./hundredsToWords";
+import tens from "./tens";
 
 export default function numberToWordsSV(value: number): string {
-  if (value < 1000) return hundredsToWords(value);
+  if (value < 11) return tens(value);
 
   return `${value} in Swedish`;
 }
