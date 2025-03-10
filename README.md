@@ -2,7 +2,7 @@
 
 ## Todo
 
-The system should display the following message: "Du har angett `<input>`, är det korrekt?"
+The system should display the following message: "Du har angett `<input>`, är det korrekt?" ✅
 
 Then, when a user enters a revenue amount, a written-out version should be displayed based on these rules:
 
