@@ -16,7 +16,13 @@ export default function numberToWordsSV(value: number): string {
     const chunk = value % 1000;
 
     if (chunk > 0) {
-      let chunkWords = convertBelowThousand(chunk);
+      let chunkWords;
+
+      if (thousandIndex >= 2) {
+        chunkWords = chunk.toString();
+      } else {
+        chunkWords = convertBelowThousand(chunk);
+      }
 
       if (thousandIndex > 0) {
         chunkWords += " " + thousands[thousandIndex];
