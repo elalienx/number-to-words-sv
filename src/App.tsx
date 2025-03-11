@@ -34,7 +34,7 @@ export default function App() {
         value={value}
       />
       <p>
-        Du har angett <b>{result}</b>, är det korrekt?
+        Du har angett <b>{result}</b> kr, är det korrekt?
       </p>
     </div>
   );
