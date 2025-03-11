@@ -7,7 +7,7 @@ import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(150_000);
+  const [value, setValue] = useState(625_400_200);
   const [result, setResult] = useState(numberToWordsSV(value));
 
   // Properties
@@ -37,6 +37,29 @@ export default function App() {
       <p>
         Du har angett <b>{result}</b> kr, är det korrekt?
       </p>
+      <h2>📐 Rules</h2>
+      <ul>
+        <li>
+          0 – 999,999: Display the full amount in words (e.g., “hundratusen kr”)
+          (one hundred thousand). ✅
+        </li>
+        <li>
+          1,000,000 – 999,999,999: Display a mix of digits and words (e.g., “10
+          miljoner kr”)
+        </li>
+        <li>
+          Non-round millions (e.g., 1,340,054): Round to one decimal place in
+          millions with "ca" (e.g., “ca 1,3 miljoner kr”)
+        </li>
+      </ul>
+      <h2>🐞 Report errors</h2>
+      If a number has the wrong words, please add it to this list:{" "}
+      <a
+        href="https://www.icloud.com/numbers/02356ez-PiGc11ZE4CfMEykhQ#nubers-to-words-sv"
+        target="_blank"
+      >
+        Numbers spreadsheet
+      </a>
     </div>
   );
 }
