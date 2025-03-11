@@ -7,7 +7,7 @@ import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(150_000);
   const [result, setResult] = useState(numberToWordsSV(value));
 
   // Properties
@@ -18,6 +18,7 @@ export default function App() {
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const newValue: number = Number(event.target.value);
     const newResult: string = numberToWordsSV(newValue);
+    console.log("---");
 
     setValue(newValue);
     setResult(newResult);

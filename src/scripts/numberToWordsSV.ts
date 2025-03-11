@@ -23,6 +23,7 @@ export default function numberToWordsSV(value: number): string {
       }
 
       parts.unshift(chunkWords);
+      console.log("chunkWords", chunkWords);
     }
 
     value = Math.floor(value / 1000);

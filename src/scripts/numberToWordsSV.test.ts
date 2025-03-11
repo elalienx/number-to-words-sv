@@ -43,6 +43,18 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
+  test("Expect 999_999 to be ett", () => {
+    // Arrange
+    const value = 999_999;
+    const result = "niohundra nittio nio tusen niohundra nittio nio";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
   test("Expect 1_000_000 to be niohundra nittio nio", () => {
     // Arrange
     const value = 1_000_000;
