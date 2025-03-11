@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // Project files
 import numberToWordsSV from "./scripts/numberToWordsSV";
+import "./style/style.css";
 
 export default function App() {
   // Local state
@@ -24,7 +25,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Number to words, Swedish</h1>
+      <h1>Nummer till ord på Svenska</h1>
       <input
         max={MAXIMUM_VALUE}
         min={MINIMUM_VALUE}
