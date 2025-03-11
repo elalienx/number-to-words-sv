@@ -13,7 +13,7 @@ export default function convertBelowThousand(value: number): string {
   if (value >= 1000) return "";
 
   if (value >= 100) {
-    result.push(ones[Math.floor(value / 100)] + " " + "hundra");
+    result.push(ones[Math.floor(value / 100)] + "hundra");
     value %= 100;
   }
   if (value >= 10 && value <= 19) {
@@ -23,6 +23,7 @@ export default function convertBelowThousand(value: number): string {
       result.push(tens[Math.floor(value / 10)]);
       value %= 10;
     }
+
     if (value > 0) {
       result.push(ones[value]);
     }
