@@ -7,7 +7,7 @@ import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(1_000_001);
+  const [value, setValue] = useState(625_400_200);
   const [result, setResult] = useState(numberToWordsSV(value));
 
   // Properties
@@ -45,11 +45,11 @@ export default function App() {
         </li>
         <li>
           1,000,000 – 999,999,999: Display a mix of digits and words (e.g., “10
-          miljoner kr”)
+          miljoner kr”) ✅
         </li>
         <li>
           Non-round millions (e.g., 1,340,054): Round to one decimal place in
-          millions with "ca" (e.g., “ca 1,3 miljoner kr”)
+          millions with "ca" (e.g., “ca 1,3 miljoner kr”) ✅
         </li>
       </ul>
       <h2>🐞 Report errors</h2>

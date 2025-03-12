@@ -16,25 +16,41 @@ export default function numberToWordsSV(value: number): string {
     const chunk = value % 1000;
 
     if (chunk > 0) {
-      let chunkWords;
+      let chunkToWords;
 
+      // Evaluation A: Convert digits to words if bigger than 1_000_000
       if (thousandIndex >= 1) {
-        chunkWords = chunk.toString();
+        chunkToWords = chunk.toString();
       } else {
-        chunkWords = convertBelowThousand(chunk);
+        chunkToWords = convertBelowThousand(chunk);
       }
 
+      // Evaluation B: Append thusands words if bigger than 1_000
       if (thousandIndex > 0) {
-        chunkWords += " " + thousands[thousandIndex];
+        chunkToWords += " " + thousands[thousandIndex];
       }
 
-      parts.unshift(chunkWords);
-      console.log("chunkWords", chunkWords);
+      parts.unshift(chunkToWords);
     }
 
     value = Math.floor(value / 1000);
     thousandIndex++;
   }
+  console.log("parts", parts);
 
-  return parts.join(" ").trim();
+  // Round up
+  if (thousandIndex <= 2) {
+    return parts.join(" ").trim(); // return number as normal
+  } else {
+    let overSuffix = "";
+
+    for (let index = 1; index < parts.length; index++) {
+      if (parts[index] !== "") {
+        overSuffix = "ca" + " ";
+        break;
+      }
+    }
+
+    return overSuffix + parts[0];
+  }
 }

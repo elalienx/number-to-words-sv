@@ -78,7 +78,9 @@ describe("Normal cases", () => {
     // Assert
     expect(test).toBe(result);
   });
+});
 
+describe("Big numbers", () => {
   test("Expect 1'000,000 to be 1 miljoner", () => {
     // Arrange
     const value = 1_000_000;
@@ -103,10 +105,22 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 625'400,200 to be ca 625 miljoner 400 tusen", () => {
+  test("Expect 625'000,000 to be 625 miljoner", () => {
+    // Arrange
+    const value = 625_000_000;
+    const result = "625 miljoner";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 625'400,200 to be ca 625 miljoner", () => {
     // Arrange
     const value = 625_400_200;
-    const result = "ca 625 miljoner 400 tusen";
+    const result = "ca 625 miljoner";
 
     // Act
     const test = numberToWordsSV(value);
