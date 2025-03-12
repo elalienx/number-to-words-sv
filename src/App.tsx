@@ -7,7 +7,7 @@ import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(625_400_200);
+  const [value, setValue] = useState(1_000_001);
   const [result, setResult] = useState(numberToWordsSV(value));
 
   // Properties

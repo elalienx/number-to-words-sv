@@ -2,7 +2,7 @@ import convertBelowThousand from "./convertBelowThousand";
 
 export default function numberToWordsSV(value: number): string {
   // prettier-ignore
-  const thousands = ["", "tusen", "miljon", "miljard", "biljon"];
+  const thousands = ["", "tusen", "miljoner", "miljard", "biljon"];
 
   // Safeguards
   if (value === 0) return "noll";
@@ -18,7 +18,7 @@ export default function numberToWordsSV(value: number): string {
     if (chunk > 0) {
       let chunkWords;
 
-      if (thousandIndex >= 2) {
+      if (thousandIndex >= 1) {
         chunkWords = chunk.toString();
       } else {
         chunkWords = convertBelowThousand(chunk);

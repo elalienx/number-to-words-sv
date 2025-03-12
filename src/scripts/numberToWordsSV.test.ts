@@ -31,10 +31,34 @@ describe("Edge cases", () => {
 });
 
 describe("Normal cases", () => {
-  test("Expect 300_000 to be ett", () => {
+  test("Expect 100 to be etthundra", () => {
+    // Arrange
+    const value = 100;
+    const result = "etthundra";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 200 to be tvåhundra", () => {
+    // Arrange
+    const value = 200;
+    const result = "tvåhundra";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 300,000 to be ett", () => {
     // Arrange
     const value = 300_000;
-    const result = "trehundra tusen";
+    const result = "300 tusen";
 
     // Act
     const test = numberToWordsSV(value);
@@ -43,10 +67,10 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 999_999 to be ett", () => {
+  test("Expect 999,999 to be niohundra nittio nio tusen niohundra nittio nio", () => {
     // Arrange
     const value = 999_999;
-    const result = "niohundra nittio nio tusen niohundra nittio nio";
+    const result = "999 tusen niohundra nittio nio";
 
     // Act
     const test = numberToWordsSV(value);
@@ -55,11 +79,34 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 1_000_000 to be niohundra nittio nio", () => {
+  test("Expect 1'000,000 to be 1 miljoner", () => {
     // Arrange
     const value = 1_000_000;
-    // const result = "ett miljon";
-    const result = "1 miljon";
+    const result = "1 miljoner";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 1'000,001 to be ca 1 miljoner", () => {
+    // Arrange
+    const value = 1_000_001;
+    const result = "ca 1 miljoner";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 625'400,200 to be ca 625 miljoner 400 tusen", () => {
+    // Arrange
+    const value = 625_400_200;
+    const result = "ca 625 miljoner 400 tusen";
 
     // Act
     const test = numberToWordsSV(value);
