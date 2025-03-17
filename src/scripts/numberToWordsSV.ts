@@ -39,7 +39,7 @@ export default function numberToWordsSV(value: number): string {
   console.log("parts", parts);
 
   // Round up
-  if (thousandIndex <= 2) {
+  if (thousandIndex <= 1) {
     return parts.join(" ").trim(); // return number as normal
   } else {
     let overSuffix = "";

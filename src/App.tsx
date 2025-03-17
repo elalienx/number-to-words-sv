@@ -7,7 +7,7 @@ import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(23);
+  const [value, setValue] = useState(10_000);
   const [result, setResult] = useState(numberToWordsSV(value));
 
   // Properties
@@ -35,7 +35,8 @@ export default function App() {
         value={value}
       />
       <p>
-        Du har angett <b className="highlight">{result}</b> kr, är det korrekt?
+        Du har angett <span className="highlight">{result}</span> kr, är det
+        korrekt?
       </p>
       <section className="section-small rules">
         <h2>📐 Rules</h2>
