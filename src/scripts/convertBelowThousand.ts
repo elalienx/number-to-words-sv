@@ -27,5 +27,5 @@ export default function convertBelowThousand(value: number): string {
     result.push(ones[value]);
   }
 
-  return result.join(" ");
+  return result.join("");
 }

@@ -82,7 +82,7 @@ describe("Normal cases", () => {
   test("Expect 999 to be niohundra nittio nio", () => {
     // Arrange
     const value = 999;
-    const result = "niohundra nittio nio";
+    const result = "niohundranittionio";
 
     // Act
     const test = convertBelowThousand(value);

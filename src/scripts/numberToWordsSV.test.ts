@@ -33,7 +33,7 @@ describe("Edge cases", () => {
 describe("Big numbers", () => {
   test("Expect 21,584 to be ca 21 tusen", () => {
     // Arrange
-    const value = 300_000;
+    const value = 21_584;
     const result = "ca 21 tusen";
 
     // Act
@@ -55,10 +55,10 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 999,999 to be 999 tusen niohundra nittio nio", () => {
+  test("Expect 999,999 to be ca 999 tusen", () => {
     // Arrange
     const value = 999_999;
-    const result = "999 tusen niohundra nittio nio";
+    const result = "ca 999 tusen";
 
     // Act
     const test = numberToWordsSV(value);
