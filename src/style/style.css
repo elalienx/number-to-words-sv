@@ -1,3 +1,15 @@
 input {
   width: 500px;
 }
+
+a {
+  text-decoration: underline;
+}
+
+.highlight {
+  color: rgb(29, 116, 132);
+}
+
+.section-small {
+  font-size: small;
+}
