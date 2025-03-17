@@ -43,6 +43,42 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
+  test("Expect 23 to be tjugotre", () => {
+    // Arrange
+    const value = 23;
+    const result = "tjugotre";
+
+    // Act
+    const test = convertBelowThousand(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 100 to be etthundra", () => {
+    // Arrange
+    const value = 100;
+    const result = "etthundra";
+
+    // Act
+    const test = convertBelowThousand(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 123 to be etthundratjugotre", () => {
+    // Arrange
+    const value = 123;
+    const result = "etthundratjugotre";
+
+    // Act
+    const test = convertBelowThousand(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
   test("Expect 999 to be niohundra nittio nio", () => {
     // Arrange
     const value = 999;

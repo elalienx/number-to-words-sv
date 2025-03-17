@@ -30,11 +30,11 @@ describe("Edge cases", () => {
   });
 });
 
-describe("Normal cases", () => {
-  test("Expect 100 to be etthundra", () => {
+describe("Big numbers", () => {
+  test("Expect 21,584 to be ca 21 tusen", () => {
     // Arrange
-    const value = 100;
-    const result = "etthundra";
+    const value = 300_000;
+    const result = "ca 21 tusen";
 
     // Act
     const test = numberToWordsSV(value);
@@ -43,19 +43,7 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 200 to be tvåhundra", () => {
-    // Arrange
-    const value = 200;
-    const result = "tvåhundra";
-
-    // Act
-    const test = numberToWordsSV(value);
-
-    // Assert
-    expect(test).toBe(result);
-  });
-
-  test("Expect 300,000 to be ett", () => {
+  test("Expect 300,000 to be 300 tusen", () => {
     // Arrange
     const value = 300_000;
     const result = "300 tusen";
@@ -67,7 +55,7 @@ describe("Normal cases", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 999,999 to be niohundra nittio nio tusen niohundra nittio nio", () => {
+  test("Expect 999,999 to be 999 tusen niohundra nittio nio", () => {
     // Arrange
     const value = 999_999;
     const result = "999 tusen niohundra nittio nio";
@@ -78,9 +66,7 @@ describe("Normal cases", () => {
     // Assert
     expect(test).toBe(result);
   });
-});
 
-describe("Big numbers", () => {
   test("Expect 1'000,000 to be 1 miljoner", () => {
     // Arrange
     const value = 1_000_000;
