@@ -26,7 +26,10 @@ export default function App() {
 
   return (
     <div>
-      <h1>Nummer till ord på Svenska</h1>
+      <h1>Nummer till ord på Svenska </h1>
+      <p>
+        <small>(version 1.2)</small>
+      </p>
       <input
         max={MAXIMUM_VALUE}
         min={MINIMUM_VALUE}
