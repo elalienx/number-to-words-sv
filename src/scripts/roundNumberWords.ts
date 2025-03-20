@@ -1,8 +1,7 @@
-export default function roundNumberWords(originalValue: string) {
-  const digitAndWordRegex: RegExp = /^(\d+\s+\w+)(\s+\w+.*)?$/; // "1 tusen" "150 miljoner"
-  let value: string = originalValue;
+export default function roundNumberWords(value: string) {
+  const regex: RegExp = /^(\d+\s+\w+)(\s+\w+.*)?$/; // "1 tusen" "150 miljoner"
 
-  return value.replace(digitAndWordRegex, (_, processedWord, extra) => {
-    return extra ? `ca ${processedWord}` : processedWord;
+  return value.replace(regex, (_, word: string, hasExtraWords: boolean) => {
+    return hasExtraWords ? `ca ${word}` : word;
   });
 }

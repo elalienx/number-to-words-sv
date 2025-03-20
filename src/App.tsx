@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Project files
-import numberToWordsSV from "./scripts/numberToWordsSV";
+import numberToWordsSV from "./scripts/numberToWords";
 import "./style/style.css";
 
 export default function App() {

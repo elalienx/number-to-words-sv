@@ -2,7 +2,7 @@
 import { describe, expect, test } from "vitest";
 
 // Project files
-import numberToWordsSV from "./numberToWordsSV";
+import numberToWordsSV from "./numberToWords";
 
 describe("Edge cases", () => {
   test("Expect 0 to be noll", () => {
