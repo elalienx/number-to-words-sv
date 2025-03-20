@@ -67,10 +67,10 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 1'000,000 to be 1 miljoner", () => {
+  test("Expect 1'000,000 to be 1 miljon", () => {
     // Arrange
     const value = 1_000_000;
-    const result = "1 miljoner";
+    const result = "1 miljon";
 
     // Act
     const test = numberToWordsSV(value);
@@ -79,10 +79,10 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 1'000,001 to be ca 1 miljoner", () => {
+  test("Expect 1'000,001 to be ca 1 miljon", () => {
     // Arrange
     const value = 1_000_001;
-    const result = "ca 1 miljoner";
+    const result = "ca 1 miljon";
 
     // Act
     const test = numberToWordsSV(value);

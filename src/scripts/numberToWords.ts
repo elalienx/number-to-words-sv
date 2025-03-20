@@ -2,7 +2,7 @@ import convertBelowThousand from "./convertBelowThousand";
 import roundNumberWords from "./roundNumberWords";
 
 export default function numberToWordsSV(originalValue: number): string {
-  const thousands: string[] = ["", "tusen", "miljoner", "miljard", "biljon"];
+  const thousands: string[] = ["", "tusen", "miljon", "miljard", "biljon"];
   const parts: string[] = [];
   let value: number = originalValue;
   let thousandIndex = 0;
@@ -16,7 +16,7 @@ export default function numberToWordsSV(originalValue: number): string {
     const chunk: number = value % 1000;
 
     if (chunk > 0) {
-      let chunkToWords;
+      let chunkToWords: string;
 
       // Evaluation A: Convert digits to words if bigger than 1_000_000
       if (thousandIndex >= 1) {
@@ -27,7 +27,7 @@ export default function numberToWordsSV(originalValue: number): string {
 
       // Evaluation B: After convertion, Append thusands words if bigger than 1_000
       if (thousandIndex > 0) {
-        chunkToWords += " " + thousands[thousandIndex];
+        chunkToWords += ` ${thousands[thousandIndex]}`;
       }
 
       parts.unshift(chunkToWords);
