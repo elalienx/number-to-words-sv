@@ -25,7 +25,7 @@ export default function numberToWordsSV(originalValue: number): string {
         chunkToWords = convertBelowThousand(chunk);
       }
 
-      // Evaluation B: Append thusands words if bigger than 1_000
+      // Evaluation B: After convertion, Append thusands words if bigger than 1_000
       if (thousandIndex > 0) {
         chunkToWords += " " + thousands[thousandIndex];
       }
