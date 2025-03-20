@@ -1,11 +1,11 @@
 import convertBelowThousand from "./convertBelowThousand";
+import roundNumberWords from "./roundNumberWords";
 
 export default function numberToWordsSV(originalValue: number): string {
   const thousands: string[] = ["", "tusen", "miljoner", "miljard", "biljon"];
   const parts: string[] = [];
   let value: number = originalValue;
   let thousandIndex = 0;
-  let result = "";
 
   // Safeguards
   if (value === 0) return "noll";
@@ -37,37 +37,5 @@ export default function numberToWordsSV(originalValue: number): string {
     thousandIndex++;
   }
 
-  // Round up
-  if (thousandIndex <= 1) {
-    result = parts.join(""); // return number as normal
-  } else {
-    let overSuffix = "";
-
-    for (let index = 1; index < parts.length; index++) {
-      if (parts[index] !== "") {
-        overSuffix = `ca `; // notice the empty scace after ca
-        break;
-      }
-    }
-
-    result = overSuffix + parts[0];
-  }
-
-  return result;
-}
-
-function roundNumberWordsUp(thounsandIndex: number, parts: string[]) {
-  let overSuffix = "";
-
-  // Safeguard
-  if (thounsandIndex <= 1) return parts.join("");
-
-  for (let index = 1; index < parts.length; index++) {
-    if (parts[index] !== "") {
-      overSuffix = `ca `; // notice the empty scace after ca
-      break;
-    }
-  }
-
-  return overSuffix + parts[0];
+  return roundNumberWords(parts.join(" "));
 }
