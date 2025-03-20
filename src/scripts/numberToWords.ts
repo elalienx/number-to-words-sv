@@ -27,7 +27,9 @@ export default function numberToWordsSV(originalValue: number): string {
 
       // Evaluation B: After convertion, Append thusands words if bigger than 1_000
       if (thousandIndex > 0) {
-        chunkToWords += ` ${thousands[thousandIndex]}`;
+        const suffix = thousands[thousandIndex];
+
+        chunkToWords += " " + suffix;
       }
 
       parts.unshift(chunkToWords);
