@@ -2,43 +2,43 @@
 import { useState } from "react";
 
 // Project files
-import numberToWordsSV from "./scripts/numberToWords";
+import numberToWords from "./scripts/numberToWords";
 import "./style/style.css";
 
 export default function App() {
   // Local state
-  const [value, setValue] = useState(10_000);
-  const [result, setResult] = useState(numberToWordsSV(value));
+  const [digits, setDigits] = useState(10_000);
+  const [words, setWords] = useState(numberToWords(digits));
 
   // Properties
-  const MINIMUM_VALUE = 0;
-  const MAXIMUM_VALUE = 100_000;
+  const MIN_VALUE = 0;
+  const MAX_VALUE = 999_999_999_999_999;
+  const VERSION = 1.3;
 
   // Methods
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const newValue: number = Number(event.target.value);
-    const newResult: string = numberToWordsSV(newValue);
-    console.log("---");
+    const newResult: string = numberToWords(newValue);
 
-    setValue(newValue);
-    setResult(newResult);
+    setDigits(newValue);
+    setWords(newResult);
   }
 
   return (
     <div>
       <h1>Nummer till ord på Svenska </h1>
       <p>
-        <small>(version 1.2)</small>
+        <small>(version {VERSION})</small>
       </p>
       <input
-        max={MAXIMUM_VALUE}
-        min={MINIMUM_VALUE}
+        max={MAX_VALUE}
+        min={MIN_VALUE}
         onChange={(event) => onInputChange(event)}
         type="number"
-        value={value}
+        value={digits}
       />
       <p>
-        Du har angett <span className="highlight">{result}</span> kr, är det
+        Du har angett <span className="highlight">{words}</span> kr, är det
         korrekt?
       </p>
       <section className="section-small rules">
