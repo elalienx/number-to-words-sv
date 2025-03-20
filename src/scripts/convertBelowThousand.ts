@@ -1,11 +1,13 @@
-export default function convertBelowThousand(value: number): string {
+export default function convertBelowThousand(originalValue: number): string {
+  let value = originalValue;
+
   // prettier-ignore
   const ones = ["", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"];
   // prettier-ignore
   const teens = ["tio", "elva", "tolv", "tretton", "fjorton", "femton", "sexton", "sjutton", "arton", "nitton"];
   // prettier-ignore
   const tens = ["", "", "tjugo", "trettio", "fyrtio", "femtio", "sextio", "sjuttio", "åttio", "nittio"];
-  let result = [];
+  const result = [];
 
   // Safeguards
   if (value < 0) return "Nummer är mindre än noll";

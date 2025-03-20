@@ -1,7 +1,5 @@
-// Node modules
-import { describe, expect, test } from "vitest";
+import { describe, test, expect } from "vitest";
 
-// Project files
 import convertBelowThousand from "./convertBelowThousand";
 
 describe("Edge cases", () => {

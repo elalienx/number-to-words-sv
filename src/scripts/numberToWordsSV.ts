@@ -1,8 +1,8 @@
 import convertBelowThousand from "./convertBelowThousand";
 
-export default function numberToWordsSV(value: number): string {
-  // prettier-ignore
+export default function numberToWordsSV(originalValue: number): string {
   const thousands = ["", "tusen", "miljoner", "miljard", "biljon"];
+  let value = originalValue;
 
   // Safeguards
   if (value === 0) return "noll";
@@ -36,7 +36,6 @@ export default function numberToWordsSV(value: number): string {
     value = Math.floor(value / 1000);
     thousandIndex++;
   }
-  console.log("parts", parts);
 
   // Round up
   if (thousandIndex <= 1) {
@@ -46,7 +45,7 @@ export default function numberToWordsSV(value: number): string {
 
     for (let index = 1; index < parts.length; index++) {
       if (parts[index] !== "") {
-        overSuffix = "ca" + " ";
+        overSuffix = `ca `; // notice the empty scace after ca
         break;
       }
     }
