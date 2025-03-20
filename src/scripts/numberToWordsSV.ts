@@ -1,19 +1,19 @@
 import convertBelowThousand from "./convertBelowThousand";
 
 export default function numberToWordsSV(originalValue: number): string {
-  const thousands = ["", "tusen", "miljoner", "miljard", "biljon"];
-  let value = originalValue;
+  const thousands: string[] = ["", "tusen", "miljoner", "miljard", "biljon"];
+  const parts: string[] = [];
+  let value: number = originalValue;
+  let thousandIndex = 0;
+  let result = "";
 
   // Safeguards
   if (value === 0) return "noll";
   if (value < 0) return "Nummer är mindre än noll";
-  if (value > 999_999_999_999_999) return "Nummer är större än gränsen";
-
-  const parts = [];
-  let thousandIndex = 0;
+  if (value > 999_999_999_999_999) return "Nummer är för stort";
 
   while (value > 0) {
-    const chunk = value % 1000;
+    const chunk: number = value % 1000;
 
     if (chunk > 0) {
       let chunkToWords;
@@ -39,7 +39,7 @@ export default function numberToWordsSV(originalValue: number): string {
 
   // Round up
   if (thousandIndex <= 1) {
-    return parts.join(" ").trim(); // return number as normal
+    result = parts.join(""); // return number as normal
   } else {
     let overSuffix = "";
 
@@ -50,6 +50,24 @@ export default function numberToWordsSV(originalValue: number): string {
       }
     }
 
-    return overSuffix + parts[0];
+    result = overSuffix + parts[0];
   }
+
+  return result;
+}
+
+function roundNumberWordsUp(thounsandIndex: number, parts: string[]) {
+  let overSuffix = "";
+
+  // Safeguard
+  if (thounsandIndex <= 1) return parts.join("");
+
+  for (let index = 1; index < parts.length; index++) {
+    if (parts[index] !== "") {
+      overSuffix = `ca `; // notice the empty scace after ca
+      break;
+    }
+  }
+
+  return overSuffix + parts[0];
 }
