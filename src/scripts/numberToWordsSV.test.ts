@@ -20,7 +20,7 @@ describe("Edge cases", () => {
   test("Expect 1_000_000_000_000_000 to return error message", () => {
     // Arrange
     const value = 1_000_000_000_000_000;
-    const result = "Nummer är för stort";
+    const result = "Nummer är större än gränsen";
 
     // Act
     const test = numberToWordsSV(value);
