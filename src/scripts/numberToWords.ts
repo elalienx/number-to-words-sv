@@ -27,9 +27,13 @@ export default function numberToWordsSV(originalValue: number): string {
 
       // Evaluation B: After convertion, Append thusands words if bigger than 1_000
       if (thousandIndex > 0) {
+        const isSingular = chunkToWords === "1";
+        const isOverMillion = thousandIndex >= 2;
         const suffix = thousands[thousandIndex];
+        const finalSuffix =
+          isSingular && isOverMillion ? suffix : suffix + "er";
 
-        chunkToWords += " " + suffix;
+        chunkToWords += " " + finalSuffix;
       }
 
       parts.unshift(chunkToWords);
