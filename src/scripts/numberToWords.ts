@@ -18,14 +18,14 @@ export default function numberToWordsSV(originalValue: number): string {
     if (chunk > 0) {
       let chunkToWords: string;
 
-      // Evaluation A: Convert digits to words if bigger than 1_000_000
-      if (thousandIndex >= 1) {
-        chunkToWords = chunk.toString();
-      } else {
+      // Evaluation A: Convert digits to words if below 1_000
+      if (thousandIndex === 0) {
         chunkToWords = convertBelowThousand(chunk);
+      } else {
+        chunkToWords = chunk.toString();
       }
 
-      // Evaluation B: After convertion, Append thusands words if bigger than 1_000
+      // Evaluation B: After convertion, append thusands words if above 1_000
       if (thousandIndex > 0) {
         const isPlural = chunkToWords !== "1";
         const isOverMillion = thousandIndex > 1;
