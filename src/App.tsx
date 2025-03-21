@@ -13,7 +13,7 @@ export default function App() {
   // Properties
   const MIN_VALUE = 0;
   const MAX_VALUE = 999_999_999_999_999;
-  const VERSION = 1.5;
+  const VERSION = 1.3;
 
   // Methods
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
