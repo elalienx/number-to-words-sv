@@ -79,7 +79,19 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 999,999 to be ca ca niohundratusen", () => {
+  test("Expect 875,324 to be ca åttahundrasjuttiofemtusen", () => {
+    // Arrange
+    const value = 875_324;
+    const result = "ca åttahundrasjuttiofemtusen";
+
+    // Act
+    const test = numberToWords(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 999,999 to be ca niohundratusen", () => {
     // Arrange
     const value = 999_999;
     const result = "ca niohundratusen";
