@@ -2,7 +2,7 @@
 import { describe, expect, test } from "vitest";
 
 // Project files
-import numberToWordsSV from "./numberToWords";
+import numberToWords from "./numberToWords";
 
 describe("Edge cases", () => {
   test("Expect 0 to be noll", () => {
@@ -11,7 +11,7 @@ describe("Edge cases", () => {
     const result = "noll";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -23,7 +23,7 @@ describe("Edge cases", () => {
     const result = "Nummer är för stort";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -37,7 +37,7 @@ describe("Big numbers", () => {
     const result = "etttusen";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -49,7 +49,7 @@ describe("Big numbers", () => {
     const result = "tvåtusen";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -61,7 +61,7 @@ describe("Big numbers", () => {
     const result = "ca tjugoetttusen";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -73,7 +73,7 @@ describe("Big numbers", () => {
     const result = "trehundratusen";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -85,7 +85,7 @@ describe("Big numbers", () => {
     const result = "ca niohundratusen";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -97,7 +97,7 @@ describe("Big numbers", () => {
     const result = "1 miljon";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -109,7 +109,7 @@ describe("Big numbers", () => {
     const result = "ca 1 miljon";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -121,7 +121,7 @@ describe("Big numbers", () => {
     const result = "625 miljoner";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);
@@ -133,7 +133,7 @@ describe("Big numbers", () => {
     const result = "ca 625 miljoner";
 
     // Act
-    const test = numberToWordsSV(value);
+    const test = numberToWords(value);
 
     // Assert
     expect(test).toBe(result);

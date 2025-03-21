@@ -1,7 +1,7 @@
 import convertBelowThousand from "./convertBelowThousand";
 import roundNumberWords from "./roundNumberWords";
 
-export default function numberToWordsSV(originalValue: number): string {
+export default function numberToWords(originalValue: number): string {
   const thousands: string[] = ["", "tusen", "miljon", "miljard", "biljon"];
   const parts: string[] = [];
   let value: number = originalValue;
