@@ -18,22 +18,24 @@ export default function numberToWordsSV(originalValue: number): string {
     if (chunk > 0) {
       let chunkToWords: string;
 
-      // Evaluation A: Convert digits to words if bigger than 1_000 (must be 1_000_000)
-      if (thousandIndex === 0) {
+      // Evaluation A: Convert digits to words if value is under 1_000_000
+      if (thousandIndex < 2) {
         chunkToWords = convertBelowThousand(chunk);
       } else {
         chunkToWords = chunk.toString();
       }
 
-      // Evaluation B: After convertion, Append thusands words if bigger than 1_000
+      // Evaluation B: After convertion, Append thusands suffix if over 1_000
       if (thousandIndex > 0) {
         const isPlural = chunkToWords !== "1";
         const isOverMillion = thousandIndex > 1;
         let suffix = thousands[thousandIndex];
+        let space = "";
 
         if (isPlural && isOverMillion) suffix += "er";
+        if (isOverMillion) space = " ";
 
-        chunkToWords += " " + suffix;
+        chunkToWords += space + suffix;
       }
 
       parts.unshift(chunkToWords);
