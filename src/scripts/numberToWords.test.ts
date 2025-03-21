@@ -31,10 +31,34 @@ describe("Edge cases", () => {
 });
 
 describe("Big numbers", () => {
-  test("Expect 21,584 to be ca 21 tusen", () => {
+  test("Expect 1,000 to be etttusen", () => {
+    // Arrange
+    const value = 1_000;
+    const result = "etttusen";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 2,000 to be tvåtusen", () => {
+    // Arrange
+    const value = 2_000;
+    const result = "tvåtusen";
+
+    // Act
+    const test = numberToWordsSV(value);
+
+    // Assert
+    expect(test).toBe(result);
+  });
+
+  test("Expect 21,584 to be ca tjugoetttusen", () => {
     // Arrange
     const value = 21_584;
-    const result = "ca 21 tusen";
+    const result = "ca tjugoetttusen";
 
     // Act
     const test = numberToWordsSV(value);
@@ -43,10 +67,10 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 300,000 to be 300 tusen", () => {
+  test("Expect 300,000 to be trehundratusen", () => {
     // Arrange
     const value = 300_000;
-    const result = "300 tusen";
+    const result = "trehundratusen";
 
     // Act
     const test = numberToWordsSV(value);
@@ -55,10 +79,10 @@ describe("Big numbers", () => {
     expect(test).toBe(result);
   });
 
-  test("Expect 999,999 to be ca 999 tusen", () => {
+  test("Expect 999,999 to be ca ca niohundratusen", () => {
     // Arrange
     const value = 999_999;
-    const result = "ca 999 tusen";
+    const result = "ca niohundratusen";
 
     // Act
     const test = numberToWordsSV(value);
