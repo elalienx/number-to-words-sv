@@ -19,7 +19,7 @@ export default function numberToWordsSV(originalValue: number): string {
       let chunkToWords: string;
 
       // Evaluation A: Convert digits to words if bigger than 1_000_000
-      if (thousandIndex >= 1) {
+      if (thousandIndex > 0) {
         chunkToWords = chunk.toString();
       } else {
         chunkToWords = convertBelowThousand(chunk);
