@@ -18,11 +18,11 @@ export default function numberToWordsSV(originalValue: number): string {
     if (chunk > 0) {
       let chunkToWords: string;
 
-      // Evaluation A: Convert digits to words if bigger than 1_000_000
-      if (thousandIndex > 0) {
-        chunkToWords = chunk.toString();
-      } else {
+      // Evaluation A: Convert digits to words if bigger than 1_000 (must be 1_000_000)
+      if (thousandIndex === 0) {
         chunkToWords = convertBelowThousand(chunk);
+      } else {
+        chunkToWords = chunk.toString();
       }
 
       // Evaluation B: After convertion, Append thusands words if bigger than 1_000
