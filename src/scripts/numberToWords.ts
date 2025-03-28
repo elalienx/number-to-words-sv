@@ -6,6 +6,7 @@ export default function numberToWords(originalValue: number): string {
   const parts: string[] = [];
   let value: number = originalValue;
   let thousandIndex = 0;
+  let result = "";
 
   // Safeguards
   if (value === 0) return "noll";
@@ -45,5 +46,10 @@ export default function numberToWords(originalValue: number): string {
     thousandIndex++;
   }
 
-  return roundNumberWords(parts.join(" "));
+  result = roundNumberWords(parts.join(" "));
+
+  // Edge case for "1_000" being "tusen" not "etttusen"
+  if (result === "etttusen") result = "tusen";
+
+  return result;
 }
