@@ -46,7 +46,7 @@ export default function numberToWords(originalValue: number): string {
     thousandIndex++;
   }
 
-  result = roundNumberWords(parts.join(" "));
+  result = parts.join(" ");
 
   // Edge case for "1_000" being "tusen" not "etttusen"
   if (result === "etttusen") result = "tusen";
